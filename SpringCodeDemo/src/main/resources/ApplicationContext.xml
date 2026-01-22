@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Engine Bean -->
+    <bean id="engine" class="com.klu.demo.Engine" />
+
+    <!-- Constructor Injection -->
+    <bean id="car" class="com.klu.demo.Car">
+        <constructor-arg ref="engine" />
+    </bean>
+
+    <!-- Setter Injection -->
+    <bean id="bike" class="com.klu.demo.bike">
+        <property name="engine" ref="engine" />
+    </bean>
+
+</beans>
